@@ -1,7 +1,6 @@
 {
-  "name": "mongodb-test",
-  "main": "index.js",
-  "type": "commonjs",
+  "name": "railway-test",
+  "private": true,
   "scripts": {
     "start": "node index.js"
   },
