@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+const express = require("express");
 
-// 🔹 Connexion MongoDB
-const mongoURL = process.env.MONGO_URL;
-if (!mongoURL) {
-  console.error("⚠️ MONGO_URL n'est pas défini !");
-  process.exit(1);
-}
+const app = express();
 
-mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connecté ✅"))
-  .catch(err => console.log("Erreur MongoDB ❌ :", err));
+app.get("/", (req, res) => {
+  res.send("🚀 Railway fonctionne");
+});
+
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
