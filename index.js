@@ -1,12 +1,9 @@
-const http = require("http");
+try {
+  const mongoose = require("mongoose");
+  console.log("Mongoose est bien installé ✅");
+} catch (err) {
+  console.error("Mongoose NON installé ❌");
+  console.error(err);
+}
 
-const PORT = process.env.PORT;
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("🚀 Railway + Node HTTP OK");
-});
-
-server.listen(PORT, () => {
-  console.log("Server running on port", PORT);
-});
+console.log("Test démarrage serveur");
